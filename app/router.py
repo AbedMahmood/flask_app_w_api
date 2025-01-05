@@ -228,8 +228,13 @@ def serve_reservations_page():
 
     reservations = get_json_data(data_file)
 
+    # Sort reservations by reservation_date (most recent first)
+    reservations_sorted = sorted(reservations, 
+                                key=lambda x: datetime.strptime(x['reservation_date'], '%Y-%m-%d'), 
+                                reverse=False)
+
     page_title = 'reservations'
-    return render_page(page_title, reservations=reservations)
+    return render_page(page_title, reservations=reservations_sorted)
 
 
 
