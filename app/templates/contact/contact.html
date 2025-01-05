@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content" id="contact-form">
+    <h1>Contact Us</h1>
+    <form id="contactForm" onsubmit="return handleSubmit(event)">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first_name" required>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last_name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+
+        <label for="service-type">Type of Service:</label>
+        <select id="service-type" name="service_type" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="consultation">Consultation</option>
+            <option value="development">Development</option>
+            <option value="design">Design/API</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div id="thank-you-message" class="thank-you-message" style="display:none;">
+    <h1>Thank You!</h1>
+    <p>This has been a demonstration of our abilities. We appreciate your interest in our services. Our team is dedicated to providing top-notch solutions tailored to your needs.</p>
+    <p>With expertise in web design, API development, and database management, we leverage Python and Flask to deliver exceptional results.</p>
+    <p>Rest assured, you are in capable hands. We look forward to collaborating with you!</p>
+</div>
+
+{% endblock %}

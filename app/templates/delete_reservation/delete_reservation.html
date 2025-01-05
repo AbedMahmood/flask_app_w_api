@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="confirm-delete">
+    <h1 class="dashboard-title">Confirm Delete?</h1>
+    <div class="horizontal-line"></div>
+    <form id="deleteForm">
+        <div class="content">
+            <div class="delete-record">
+                <div>
+                    <label for="first_name">First Name:</label>
+                    <p>{{ reservation.first_name }}</p>
+                </div>
+                
+                <div>
+                    <label for="last_name">Last Name:</label>
+                    <p>{{ reservation.last_name }}</p>
+                </div>
+                
+                <div>
+                    <label for="email">Email:</label>
+                    <p>{{ reservation.email }}</p>
+                </div>
+                
+                <div>
+                    <label for="reservation_type">Reservation Type:</label>
+                    <p>{{ reservation.reservation_type }}</p>
+                </div>
+                
+                <div>
+                    <label for="reservation_date">Reservation Date:</label>
+                    <p>{{ reservation.reservation_date|format_date }}</p>
+                </div>
+                
+                <div>
+                    <label for="reservation_time">Reservation Time:</label>
+                    <p>{{ reservation.reservation_time|default('N/A')|format_time }}</p>
+                </div>
+    
+                <div>
+                    <label for="hash_key">Reservation Key:</label>
+                    <p>{{ reservation.reservation_key }}</p>
+                </div>
+    
+                <!-- Hidden input to send the hash key with the form submission -->
+                <input type="hidden" id="hash_key" value="{{ reservation.reservation_key }}">
+    
+                <button type="button" class="btn btn-danger" id="deleteButton">Delete</button> <!-- Change to button type -->
+            </div>
+        </div>
+    </form>
+    
+    <div id="message" style="display:none;"></div> <!-- Message display area -->
+    
+</div>
+
+{% endblock %}

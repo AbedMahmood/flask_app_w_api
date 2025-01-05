@@ -1,0 +1,234 @@
+/* Header Section */
+.hero {
+    background-color: #007bff;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Introduction Section */
+.intro {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: left; /* Align text to the left */
+    margin-top: 20px;
+    margin-bottom: 40px; /* Add margin to the bottom */
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Skills Section */
+.skills {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.skills h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the skills */
+    gap: 20px; /* Adds spacing between skill cards */
+}
+
+.skill {
+    flex: 1 1 100%; /* Default: each skill takes full width */
+    max-width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.skill h4 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Responsive Adjustments for Medium Screens and Above */
+@media (min-width: 768px) {
+    .skill {
+        flex: 1 1 calc(30% - 20px); /* Three skills in one row with gaps */
+        max-width: calc(30% - 20px); /* Maintain proportional sizing */
+    }
+}
+
+/* Featured Projects Section */
+.projects {
+    background-color: #f9f9f9; /* Same background color as skills section */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px; /* Adds space between the skills and featured projects section */
+}
+
+.projects h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; /* Centers the projects */
+    gap: 20px; /* Adds spacing between projects */
+}
+
+.project {
+    flex: 1 1 calc(45% - 20px); /* Ensures two projects per row with spacing */
+    max-width: calc(45% - 20px); /* Restricts width to avoid stretching */
+    margin: 0; /* Removes any unwanted margins */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column; /* Aligns children vertically */
+    justify-content: space-between; /* Ensures proper spacing inside */
+}
+
+/* Responsive Adjustments for Projects */
+@media (min-width: 1200px) { /* Large screens */
+   .project {
+       flex-basis: calc(30% - 20px); /* Three projects per row on large screens */
+       max-width: calc(30% - 20px);
+   }
+}
+
+@media (max-width: 768px) { /* Small screens */
+   .project {
+       flex-basis: calc(100% - 20px); /* Stacks projects in a single column on small screens */
+       max-width: calc(100% - 20px);
+   }
+}
+
+.project img {
+   width: 100%;
+   border-radius: 10px;
+   max-height: 150px; /* Ensures images fit */
+   object-fit: cover; /* Ensures consistent image cropping */
+   margin-bottom: 15px; /* Adds spacing below the image */
+}
+
+.project h4 {
+   font-size: 1.5rem; 
+   color:#007bff; 
+   margin-bottom :10 px ;
+}
+
+.project p {
+   font-size :1.1rem ;
+   color :#555 ;
+   margin-bottom :15 px ;
+   flex-grow :1 ; /* Pushes the button down if content is short */
+}
+
+.project .button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 0.75rem; /* Increased top and bottom padding for more height */
+    font-size: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    display: block; /* Ensures the button spans full width */
+    margin-top: 15px;
+}
+
+.project .button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Testimonials Section */
+.testimonials {
+   background-color :#f9f9f9 ;
+   padding :40 px20 px ;
+   text-align:center ;
+   margin-top :40 px ; /* Adds space between featured projects and testimonials section */ 
+}
+
+.testimonials h3 {
+   font-size :2 rem ; 
+   color :#333 ; 
+   margin-bottom :20 px ; 
+}
+
+.testimonials blockquote {
+   font-size :1.2 rem ; 
+   color :#555 ; 
+   margin-bottom :20 px ; 
+}
+
+.testimonials footer {
+   font-size :1 rem ; 
+   color :#007bff ; 
+}
+
+/* Contact Information Section */
+.contact {
+   padding :40 px20 px ; 
+   text-align:center ; 
+}
+
+.contact h3 { 
+     font-size :2 rem ; 
+     color :#333 ; 
+     margin-bottom :20 px ; 
+ }
+
+.contact p { 
+     font-size :1.1 rem ; 
+     color :#555 ; 
+ }
+
+.contact ul { 
+     list-style:none ; 
+     padding :0 ; 
+     font-size :1.1 rem ; 
+ }
+
+.contact ul li { 
+     color :#555 ; 
+     margin-bottom :10 px ; 
+ }
+
+.contact ul li a { 
+     text-decoration:none ; 
+     color:#007bff ; 
+ }
+
+.contact ul li a:hover { 
+     text-decoration :underline ;  
+}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="content">
+        <h1>Edit Reservation</h1>
+        <div id="message" style="display:none; color:red;"></div>
+        <form id="reservationForm" action="#" method="POST">
+            <input type="hidden" name="hash_key" id="hash_key" value="{{ reservation.reservation_key }}">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" value="{{ reservation.first_name }}" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" value="{{ reservation.last_name }}" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="reservation_email" value="{{ reservation.email }}" required>
+
+            <label for="reservation_type">Reservation Type:</label>
+            <select name="reservation_type" id="reservation_type" required>
+                <option value="">Select a Reservation Type</option>
+                {% for value, label in reservation_types %}
+                    <option value="{{ value }}" {% if reservation.reservation_type == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="reservation_date">Reservation Date:</label>
+            <input type="date" name="reservation_date" id="reservation_date" value="{{ reservation.reservation_date }}" required>
+
+            <label for="reservation_time">Reservation Time:</label>
+            <input type="time" name="reservation_time" id="reservation_time" value="{{ reservation.reservation_time }}" required>
+
+            <button type="submit">Update Reservation</button>
+        </form>
+    </div>
+{% endblock %}

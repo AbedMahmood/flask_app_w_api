@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="reservations-dashboard">
+    <h1 class="dashboard-title">{{ page_title }}</h1>
+
+    <!-- Reservations Grid -->
+    <div class="reservations-grid">
+        {% for reservation in reservations %}
+            <div class="reservation-card">
+                <div class="card-header">
+                    <h3>{{ reservation.first_name }} {{ reservation.last_name }}</h3>
+                    <span class="reservation-type">{{ reservation.reservation_type|format_reservation_type }}</span>
+                </div>
+                <div class="card-body">
+                    <p><strong>Email:</strong> {{ reservation.email }}</p>
+                    <p><strong>Date:</strong> {{ reservation.reservation_date|format_date }}</p> <!-- Updated line -->
+                    <p><strong>Time:</strong> {{ reservation.reservation_time|format_time }}</p>
+                    <p><strong>Reservation Key:</strong> {{ reservation.reservation_key }}</p>
+                    <div class="button-container">
+                        <a href="{{ url_for('main.serve_update_page', hash_key=reservation.reservation_key) }}" class="btn btn-primary">Update</a>
+                        <a href="{{ url_for('main.serve_delete_page', hash_key=reservation.reservation_key) }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p class="no-reservations">No reservations found.</p>
+        {% endfor %}
+    </div>    
+</div>
+{% endblock %}

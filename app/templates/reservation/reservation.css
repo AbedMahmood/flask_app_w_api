@@ -1,0 +1,24 @@
+/* Reservation Details Section */
+.reservation h1 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.reservation p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Content Container */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1rem;
+}

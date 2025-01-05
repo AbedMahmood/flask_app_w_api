@@ -1,0 +1,90 @@
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eef2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #000000; /* Black background */
+    border-top-left-radius: 10px; /* Top-left corner rounded */
+    border-top-right-radius: 10px; /* Top-right corner rounded */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the menu options */
+    flex-wrap: wrap; /* Allow items to stack in small screens */
+}
+
+/* Align brand to the far left */
+.navbar .navbar-brand {
+    color: #ffffff; /* White text for the brand */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Center main navigation (only for medium and large screens) */
+@media (min-width: 768px) {
+    .navbar-nav.centered {
+        position: absolute; /* Position absolute to truly center */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for true center alignment */
+        display: flex;
+        justify-content: center; /* Align items in the center */
+        flex-wrap: nowrap;
+    }
+}
+
+/* Right-align Admin link for medium and large screens */
+.navbar .navbar-nav.right {
+    margin-left: auto; /* Push Admin link to the far right */
+}
+
+/* Navbar Links */
+.navbar .navbar-nav .nav-link {
+    color: #ffffff; /* White text for navbar items */
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #ecf0f1; /* Slightly off-white text on hover */
+    background-color: #2980b9; /* Bright blue background on hover */
+}
+
+.navbar .navbar-nav .nav-link:active {
+    color: #ecf0f1;
+    background-color: #1abc9c; /* Greenish-blue background on active */
+}
+
+/* Small screens: default dropdown menu order */
+.navbar-nav.d-lg-none .nav-link {
+    text-align: left; /* Ensure proper alignment in dropdown menu */
+    padding: 0.5rem 1rem;
+}
+
+/* Medium and large screens: hide small-screen menu */
+@media (min-width: 768px) {
+    .navbar-nav.d-lg-none {
+        display: none; /* Hide the small-screen version */
+    }
+}
+
+/* Navbar Toggle Button for Mobile */
+.navbar-toggler-icon {
+    background-color: #ffffff; /* White color for the toggler icon */
+}
+
+/* Responsive Behavior */
+@media (max-width: 767.98px) {
+    .navbar {
+        flex-wrap: wrap; /* Allow items to stack in small screens */
+    }
+    .navbar-nav.centered {
+        position: static; /* Reset positioning for small screens */
+        transform: none;
+        justify-content: center; /* Center the menu options */
+        width: 100%; /* Ensure full width in collapsed mode */
+    }
+}

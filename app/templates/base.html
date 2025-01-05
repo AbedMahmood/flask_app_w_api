@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ website_name }} - {{ page_title }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Static CSS -->
+    <link rel="stylesheet" href="{{ url_for('main.serve_template_file', filename='base.css') }}">
+
+    <!-- Dynamic page specific css-->
+    <link rel="stylesheet" href="{{ url_for('main.serve_css', page_name=page_name) }}">
+</head>
+<body class="{{ body_class }}">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <!-- Navbar Brand -->
+                <a class="navbar-brand" href="/home"> {{ website_name }}</a>
+      
+                <!-- Navbar Toggle Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+      
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Centered Navigation Links -->
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reserve">Reserve</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reservations">Reservations</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Right-aligned Contact Link -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main class="p-4">
+        {% block content %}
+            <!-- Page-specific content will be inserted here -->
+        {% endblock %}
+    </main>
+
+    {% block scripts %}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Dynamic page specific javscript -->
+        <script src="{{ url_for('main.serve_js', page_name=page_name) }}"></script>
+    {% endblock %}
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="content">
+
+        <h1>Reservation Details</h1>
+
+        <p><strong>First Name:</strong> {{ reservation_data.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ reservation_data.last_name }}</p>
+        <p><strong>Email:</strong> {{ reservation_data.email }}</p>
+        <p><strong>Reservation Type:</strong> {{ reservation_data.reservation_type }}</p>
+        <p><strong>Reservation Date:</strong> {{ reservation_data.reservation_date }}</p>
+        <p><strong>Reservation Time:</strong> {{ reservation_data.reservation_time }}</p>
+        <p><strong>Reservation Key:</strong> {{ reservation_data.reservation_key }}</p>
+    </div>
+{% endblock %}
