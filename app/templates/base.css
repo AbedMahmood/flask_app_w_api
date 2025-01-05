@@ -71,9 +71,49 @@ body {
     }
 }
 
-/* Navbar Toggle Button for Mobile */
+/* Styles for toggler icon */
+.navbar-toggler {
+    border: none; /* Remove border */
+}
+
 .navbar-toggler-icon {
-    background-color: #ffffff; /* White color for the toggler icon */
+    background-image: none; /* Remove default background */
+    position: relative; /* Position for pseudo-elements */
+    width: 30px; /* Width of toggler */
+    height: 30px; /* Height of toggler */
+}
+
+/* Create three lines using pseudo-elements */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px; /* Height of each line */
+    background-color: #ffffff; /* Color of lines */
+    position: absolute;
+    left: 0;
+}
+
+/* Positioning lines */
+.navbar-toggler-icon::before {
+    top: 6px; /* Position first line */
+}
+
+.navbar-toggler-icon span {
+    top: 13px; /* Position second line (middle) */
+}
+
+.navbar-toggler-icon::after {
+    bottom: 6px; /* Position third line */
+}
+
+/* Remove transformations to keep the hamburger icon static */
+.navbar-toggler.collapsed .navbar-toggler-icon::before,
+.navbar-toggler.collapsed .navbar-toggler-icon span,
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+    transform: none; /* No transformation for any state */
 }
 
 /* Responsive Behavior */
